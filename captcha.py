@@ -76,7 +76,7 @@ def submit(recaptcha_challenge_field, recaptcha_response_field, private_key, rem
     httpresp.close()
 
     # Returned values are in form of bytes, split them to lines and decode to text.
-    return_values = [value.decode('utf-8') for value in return_values.splitlines()]
+    return_values = return_values.decode('utf-8').splitlines()
 
     # Line 0 contains true if the solution was valid or false otherwise.
     # Line 1 contains an optional error code.
